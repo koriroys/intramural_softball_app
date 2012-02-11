@@ -14,6 +14,9 @@ class TeamsController < ApplicationController
   # GET /teams/1.json
   def show
     @team = Team.find(params[:id])
+    @players = @team.players
+    @unsigned_players = Player.find_all_by_team_id(0)
+    # raise @unsigned_players.inspect
 
     respond_to do |format|
       format.html # show.html.erb

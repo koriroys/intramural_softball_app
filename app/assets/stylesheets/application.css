@@ -11,3 +11,36 @@
  *= require_self
  *= require_tree .
 */
+
+
+html {
+/*  background: url('rails.png') left top no-repeat;*/
+  background-size: cover;
+}
+
+nav {
+  width: 500px;
+  margin: auto;
+}
+
+nav.navbar {
+/*  float: left;*/
+  border: 2px solid #999;
+  padding: 0px;
+/*  margin:  auto;*/
+}
+
+ul.navbar li {
+  display: inline;
+  margin: 10px;
+}
+
+.content {
+/*  float: left;*/
+  margin: auto;
+  width: 500px;
+}
+
+body {
+  margin: auto;
+}

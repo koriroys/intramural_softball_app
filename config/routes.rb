@@ -1,11 +1,13 @@
 IntramuralSoftballApp::Application.routes.draw do
+  get "home/index"
+
   resources :games
 
   resources :players
 
   resources :teams
   
-  root :to => 'teams#index'
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

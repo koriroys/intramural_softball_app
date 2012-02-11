@@ -1,0 +1,20 @@
+<% unless @players.empty? then %>
+
+
+<table>
+  <tr>
+    <th>Player Name</th>
+    <th>action</th>
+  </tr>
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= link_to player.name, player %></td>
+      <td><%= button_to "Remove from team", player_path(:id => player, :player => { :team_id => 0}), :method => :put, :action => 'update' %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<% else %>
+  No players on team
+<% end %>

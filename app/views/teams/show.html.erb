@@ -10,6 +10,17 @@
   <%= @team.nick_name %>
 </p>
 
+<p>
+  <b>Players on the team:</b>
+  <%= render 'player_list' %>
+</p>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+
+<p>
+  <b>Unsigned players available to add:</b>
+  <%= render 'unsigned_players' %>
+</p>
+
+<p>
+  <%= link_to "Back to teams list", teams_url %>
+</p>

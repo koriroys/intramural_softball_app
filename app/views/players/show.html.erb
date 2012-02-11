@@ -10,6 +10,28 @@
   <%= @player.jersey_number %>
 </p>
 
+<p>
+  <b>Company: </b>
+  <% unless @player.team.present? %>
+  <% else %>
+  <%= @player.team.company_name %>
+  <p>
+    <b>Team Name: </b>
+    <%= @player.team.nick_name %>
+  </p>
+  
+  <% end %>
+</p>
+
+<p>
+  <b>Team ID:</b>
+  <%= @player.team_id %>
+</p>
+
+
+
+
+
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

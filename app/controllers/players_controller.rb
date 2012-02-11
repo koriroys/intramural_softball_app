@@ -1,8 +1,12 @@
 class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
+  before_filter do
+    @teams = Team.all
+  end
+  
   def index
-    @players = Player.all
+    @players = Player.all :include => :team
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +18,8 @@ class PlayersController < ApplicationController
   # GET /players/1.json
   def show
     @player = Player.find(params[:id])
+    
+    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +47,7 @@ class PlayersController < ApplicationController
   # POST /players.json
   def create
     @player = Player.new(params[:player])
+    # raise params.inspect
 
     respond_to do |format|
       if @player.save
@@ -57,6 +64,8 @@ class PlayersController < ApplicationController
   # PUT /players/1.json
   def update
     @player = Player.find(params[:id])
+    # raise @player.inspect
+     # raise params.inspect
 
     respond_to do |format|
       if @player.update_attributes(params[:player])

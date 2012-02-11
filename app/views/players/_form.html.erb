@@ -17,8 +17,13 @@
   </div>
   <div class="field">
     <%= f.label :jersey_number %><br />
-    <%= f.number_field :jersey_number %>
+    <%= f.number_field :jersey_number, :in => 0...99  %>
   </div>
+  <div class="field">
+    <%= f.collection_select( :team_id, @teams, :id, :company_name)  %>
+  </div>
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>
